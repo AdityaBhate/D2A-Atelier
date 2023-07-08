@@ -1,22 +1,5 @@
 import CarouselService from "./CarouselService";
 export default function ThreeDVisualizationComponent() {
-	const images = [
-		{
-			img: "/Assets/OutsourcingServices/3d-visualization-1.jpg",
-			label: ``,
-			caption: ``,
-		},
-		{
-			img: "/Assets/OutsourcingServices/3d-visualization-2.jpg",
-			label: ``,
-			caption: ``,
-		},
-		{
-			img: "/Assets/OutsourcingServices/3d-visualization-3.jpg",
-			label: ``,
-			caption: ``,
-		},
-	];
 	return (
 		<div className='serviceComponentOWrapper'>
 			<div className='serviceComponentOHeader4'>
@@ -38,9 +21,6 @@ export default function ThreeDVisualizationComponent() {
 					and Lumion.
 				</p>
 			</div>
-			{/* <div className='serviceComponentOImageCarousel'>
-				<CarouselService images={images} />
-			</div> */}
 		</div>
 	);
 }
