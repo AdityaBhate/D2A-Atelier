@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SubserviceO from "./SubserviceO";
+import Head from "next/head";
 export default function AutoCADComponent() {
 	const [filter, setFilter] = useState(1);
 	const filterButton = (props) => {
@@ -33,59 +34,109 @@ export default function AutoCADComponent() {
 		},
 	};
 	return (
-		<div className='serviceComponentOWrapper'>
-			<div className='serviceComponentOHeader1'>
-				<h1 className='serviceComponentOHeaderTitle'>AutoCAD Services</h1>
-			</div>
-			<div className='serviceComponentOContent'>
-				<p className='serviceComponentOContentText'>
-					D2A Atelier is a stablish firm with a skilled team of drafts people
-					with a wide range of expertise in AutoCAD drafting. D2A Atelier
-					AutoCAD service users are associated with the Architectural, Interior
-					Designing, and Construction industries.
-				</p>
-				<div className='serviceComponentOFilter'>
-					<span
-						className={`serviceComponentOFilterButton ${
-							filter === 1 ? "serviceComponentOFilterButtonSelected" : ``
-						}`}
-						onClick={() => filterButton(1)}>
-						Tile Shop Drawings
-					</span>
-					<span
-						className={`serviceComponentOFilterButton ${
-							filter === 2 ? "serviceComponentOFilterButtonSelected" : ``
-						}`}
-						onClick={() => filterButton(2)}>
-						Stone Shop Drawings
-					</span>
-					<span
-						className={`serviceComponentOFilterButton ${
-							filter === 3 ? "serviceComponentOFilterButtonSelected" : ``
-						}`}
-						onClick={() => filterButton(3)}>
-						Millwork Shop Drawings
-					</span>
-					<span
-						className={`serviceComponentOFilterButton ${
-							filter === 4 ? "serviceComponentOFilterButtonSelected" : ``
-						}`}
-						onClick={() => filterButton(4)}>
-						As Built Services
-					</span>
-					<span
-						className={`serviceComponentOFilterButton ${
-							filter === 5 ? "serviceComponentOFilterButtonSelected" : ``
-						}`}
-						onClick={() => filterButton(5)}>
-						Interior Drafting & Design Development Process (DDP)
-					</span>
-				</div>
-				<SubserviceO
-					title={data[filter].title}
-					content={data[filter].content}
+		<>
+			<Head>
+				<title>AUTOCAD SERVICES - D2A Atelier</title>
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/apple-touch-icon.png'
 				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/favicon-32x32.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='16x16'
+					href='/favicon-16x16.png'
+				/>
+				<link rel='manifest' href='/site.webmanifest' />
+				<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+				<meta name='msapplication-TileColor' content='#da532c' />
+				<meta name='theme-color' content='#000000' />
+				<meta
+					name='description'
+					content='D2A Atelier is a design firm based in the heart of the city of DELHI. We are a team of creative and experienced professionals who are passionate about creating beautiful spaces.'
+				/>
+				<link rel='canonical' href='https://www.d2aatelier.com/' />
+				<meta name='googlebot' content='notranslate' />
+				<meta property='og:locale' content='en_US' />
+				<meta property='og:type' content='website' />
+				<meta property='og:title' content='SERVICES - D2A Atelier' />
+				<meta
+					property='og:description'
+					content='We are a team of creative and experienced professionals who are passionate about creating beautiful spaces.'
+				/>
+				<meta property='og:url' content='https://www.d2aatelier.com/' />
+				<meta property='og:site_name' content='D2A Atelier' />
+				<meta property='og:image' content='/Assets/carousel1.jpeg' />
+				<meta property='og:image:secure_url' content='/Assets/carousel1.jpeg' />
+				<meta
+					name='twitter:description'
+					content='D2A Atelier is a design firm based in the heart of the city of DELHI. We are a team of creative and experienced professionals who are passionate about creating beautiful spaces.'
+				/>
+				<meta name='twitter:title' content='ABOUT US - D2A Atelier' />
+				<meta name='twitter:image' content='/Assets/carousel1.jpeg' />
+			</Head>
+			<div className='serviceComponentOWrapper'>
+				<div className='serviceComponentOHeader1'>
+					<h1 className='serviceComponentOHeaderTitle'>AutoCAD Services</h1>
+				</div>
+				<div className='serviceComponentOContent'>
+					<p className='serviceComponentOContentText'>
+						D2A Atelier is a stablish firm with a skilled team of Architects,
+						Interior designers, and Drafters with a wide range of expertise in
+						AutoCAD drafting. D2A Atelier&rsquo;s service users are associated
+						with the Architecture, Interior Designing, Construction and
+						Woodworking Industries.
+					</p>
+					<div className='serviceComponentOFilter'>
+						<span
+							className={`serviceComponentOFilterButton ${
+								filter === 1 ? "serviceComponentOFilterButtonSelected" : ``
+							}`}
+							onClick={() => filterButton(1)}>
+							Tile Shop Drawings
+						</span>
+						<span
+							className={`serviceComponentOFilterButton ${
+								filter === 2 ? "serviceComponentOFilterButtonSelected" : ``
+							}`}
+							onClick={() => filterButton(2)}>
+							Stone Shop Drawings
+						</span>
+						<span
+							className={`serviceComponentOFilterButton ${
+								filter === 3 ? "serviceComponentOFilterButtonSelected" : ``
+							}`}
+							onClick={() => filterButton(3)}>
+							Millwork Shop Drawings
+						</span>
+						<span
+							className={`serviceComponentOFilterButton ${
+								filter === 4 ? "serviceComponentOFilterButtonSelected" : ``
+							}`}
+							onClick={() => filterButton(4)}>
+							As Built Services
+						</span>
+						<span
+							className={`serviceComponentOFilterButton ${
+								filter === 5 ? "serviceComponentOFilterButtonSelected" : ``
+							}`}
+							onClick={() => filterButton(5)}>
+							Interior Drafting & Design Development Process (DDP)
+						</span>
+					</div>
+					<SubserviceO
+						title={data[filter].title}
+						content={data[filter].content}
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
